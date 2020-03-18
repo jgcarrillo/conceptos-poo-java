@@ -75,4 +75,39 @@ Tiene el mismo concepto que la herencia en la vida real. En el caso de la POO co
 public class Triangulo extends Forma { ... }
 ```
 
-Con lo cual la clase Triangulo tendrá disponibles todos los métodos de la clase Forma
+Con lo cual la clase Triangulo tendrá disponibles todos los métodos de la clase Forma. En Java, a diferencia de otros lenguajes, no existe la herencia múltiple, algo que se puede suplir con las Interfaces y clases abstractas.
+
+### Interfaces
+Se definen como un contrato. Las clases que la implementen estarán obligadas a desarrollar los métodos que se han definido en la interfaz. Se usan para dotar de más robustez al software y para solventar el problema de la falta de herencia múltiple. Para implementar una interface se usa la palabra reservada **implements**:
+
+```
+public class Forma implements Normas { ... }
+```
+
+### Sobreescritura de métodos
+Cuando una clase hereda de otra, además de usar sus métodos puede sobreescribirlos, con lo cual pueden darle una funcionalidad propia. Cuando un método sobreescribe a otro el IDE suele identificarlo por medio de un icono. Se puede emplear la línea *@Override* para indicar que ese método está sobreescrito, pero esto es algo funcional y que solo dota de información al compilador
+
+```
+@Override
+public String toString() { ... }
+```
+
+### Clases abstractas
+Siguiendo con el ejemplo de la clase Forma, vamos a fijarnos en el método getArea(). Si lo pensamos, en la clase Forma todavía no sabemos qué figura geométrica es, por lo que no podemos calcular un área. Esto podríamos solventarlo así:
+
+```
+public String getArea(){
+      return "Todavía no sé el área";
+}
+```
+
+No obstante, para evitar este "error" se usan las **clases abstractas**. De esta manera, en la superclase definimos (NO DESARROLLAMOS) el método que queremos que implementen las clases que hereden de ella. Tanto el método como la clase Forma deberan de pasar a ser abstractos:
+
+```
+abstract class Forma{
+
+      public String getArea();
+}
+```
+
+Esta clase abstracta *no puede ser instanciada*, es decir, no se puede hacer *Forma triangulo = new Forma();
