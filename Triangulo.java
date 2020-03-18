@@ -1,5 +1,3 @@
-package ejercicio20_poo_abstractas;
-
 public class Triangulo extends Forma {
 	
 	// --- . ---- . --- . --- CONSTRUCTOR --- . ---- . --- . --- *
@@ -22,5 +20,4 @@ public class Triangulo extends Forma {
 	
 	// --- . ---- . --- . --- CONSTANTES DE CLASE --- . ---- . --- . --- *
 	private int base, altura;
-
 }
