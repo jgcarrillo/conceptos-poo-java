@@ -81,7 +81,7 @@ public class Triangulo extends Forma { ... }
 
 Con lo cual la clase Triangulo tendrá disponibles todos los métodos de la clase Forma. En Java, a diferencia de otros lenguajes, no existe la herencia múltiple, algo que se puede suplir con las Interfaces y clases abstractas.
 
-### Uso de super()
+### :cyclone: Uso de super()
 Cuando heredamos una clase y creamos su constructor es necesario hacer una llamada al constructor padre (el de la superclase) para inicializarlo. Esto se hace mediante la palabra super(), escribiéndola **en la primera línea nada más abrir las llaves del constructor de la subclase**. Dentro de super se le pasarán los parámetros en caso de ser necesario.
 
 ```
