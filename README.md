@@ -1,4 +1,4 @@
-# Apuntes generales para notavos en Programación Orientada a Objetos con Java!
+# Apuntes generales para notavos en Programación Orientada a Objetos con Java! :fire:
 
 Tanto para mi yo del futuro como para cualquiera que llegue hasta aquí, he intentado dejar en estos tres archivos los conceptos claves sobre la programación orientada a objetos. Ni que decir tiene que estos apuntes no sustituyen al estudio profundo del lenguaje, pero creo que pueden sentar las bases (con un lenguaje ameno) de todos los conceptos. No he querido desarrollar muchos métodos ni constantes de clase para no abrumar a los no-iniciados en la materia o incluso a mi mismo, si en un futuro tengo que recurrir a estos archivos para refrescar concentos.
 
