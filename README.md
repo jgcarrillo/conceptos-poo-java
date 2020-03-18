@@ -1,4 +1,4 @@
-# Apuntes generales para iniciados en Programación Orientada a Objetos con Java!
+# Apuntes generales para notavos en Programación Orientada a Objetos con Java!
 
 Tanto para mi yo del futuro como para cualquiera que llegue hasta aquí, he intentado dejar en estos tres archivos los conceptos claves sobre la programación orientada a objetos. Ni que decir tiene que estos apuntes no sustituyen al estudio profundo del lenguaje, pero creo que pueden sentar las bases (con un lenguaje ameno) de todos los conceptos. No he querido desarrollar muchos métodos ni constantes de clase para no abrumar a los no-iniciados en la materia o incluso a mi mismo, si en un futuro tengo que recurrir a estos archivos para refrescar concentos.
 
@@ -67,3 +67,12 @@ PUBLIC | SI | SI | SI | SI
 PRIVATE | SI | NO | NO | NO
 PROTECTED | SI | SI | SI | NO
 POR DEFECTO | SI | SI | NO | NO
+
+### Herencia
+Tiene el mismo concepto que la herencia en la vida real. En el caso de la POO consiste en crear una clase que esta en la primera posición **(superclase)** y otras clases que heredan de ella **(subclases)**. Las clases que heredan tienen a su disposición los métodos y variables/constantes que hayamos definido. Para heredar de una clase usamos la palabra reservada **extends**:
+
+```
+public class Triangulo extends Forma { ... }
+```
+
+Con lo cual la clase Triangulo tendrá disponibles todos los métodos de la clase Forma
