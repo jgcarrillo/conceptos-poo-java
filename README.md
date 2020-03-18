@@ -110,4 +110,29 @@ abstract class Forma{
 }
 ```
 
-Esta clase abstracta *no puede ser instanciada*, es decir, no se puede hacer *Forma triangulo = new Forma();
+Esta clase abstracta *no puede ser instanciada*, es decir, no se puede hacer *Forma triangulo = new Forma();*. Las clases abstractas son algo muy parecido a las interfaces, aunque estas últimas tienen sus métodos solo definidos, mientras que dentro de una clase normal podemos tener una clase abstracta y tres "normales" con sus métodos perfectamente desarrollados.
+
+### Polimorfismo
+Se puede utilizar un objeto de la subclase siempre que el programa espere un objeto de la superclase, es decir, un objeto se comporta de diferente manera dependiendo del contexto. Es decir, podríamos instanciar un objeto de la clase Triangulo de las siguientes maneras:
+
+```
+Forma r1 = new Forma();
+Forma r2 = new Triangulo();
+```
+
+Como vemos, en el segundo caso el programa esperaba una superclase (Forma) y en cambio hemos usado un objeto de la subclase.
+
+### Instanciar un objeto
+Seguramente uno de los conceptos fundamentales, consiste en crear objetos de la clase creada por medio del operador **new**, sigue el siguiente patrón:
+
+```
+nombre_clase + nombre_que_queremos_darle = new + nombre_constructor
+```
+
+O de otro modo:
+
+```
+Forma mi_forma = new Triangulo(2, 3);
+``` 
+
+Como se puede ver se ha usado la clase Forma para crear un objeto de ella, seguido de un nombre para referirnos a el (le podemos dar el que queramos), igual al operador *new* seguido del constructor al que, en este caso se le han pasado dos parametros, base y altura, que tendrán que estar correctamente definidos en la clase Forma.
