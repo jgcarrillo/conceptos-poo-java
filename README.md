@@ -19,7 +19,7 @@ En ambos casos, si no quieres recurrir a guiones bajos siempre puedes usar la no
 ## Recursos previos
 Recomiendo, para profundizar en el tema, el libro *"Aprender a programar con Java* de la editorial Paraninfo, el curso de Píldoras Informáticas de Java y la web [NTU](https://www.ntu.edu.sg/home/ehchua/programming/java/J3b_OOPInheritancePolymorphism.html).
 
-# Conceptos sobre POO
+## Conceptos sobre POO
 ### Constructores
 Método especial para inicializar un objeto. Puede haber uno o varios constructores, en este último caso se hablaría de *"sobrecarga de constructores"* y variarían según el número de argumentos que le pasemos, esto también hará que Java sepa a qué constructor nos referimos: el constructor ```public Forma(String nombre)``` será distinto al constructor ```public Forma(String nombre, String color)```.
 
@@ -140,3 +140,9 @@ Forma mi_forma = new Triangulo(2, 3);
 ``` 
 
 Como se puede ver se ha usado la clase Forma para crear un objeto de ella, seguido de un nombre para referirnos a el (le podemos dar el que queramos), igual al operador *new* seguido del constructor al que, en este caso se le han pasado dos parametros, base y altura, que tendrán que estar correctamente definidos en la clase Forma.
+
+## this() is the end!
+Espero que, de una manera general, haya quedado todo claro y yo haya sabido transmitir lo poco que se de Java. Continuar aprendiendo y, sobre todo, desarrollando vuestros propios proyectos y ejercicios, es la única manera de dominar un lenguaje.
+
+Para más info podéis visitar mi web [JGCarrillo](http://jgcarrillo.com) o leerme en [Medium](https://medium.com/@ysjgomez). :v: :v:
+
