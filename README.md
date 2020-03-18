@@ -20,16 +20,16 @@ En ambos casos, si no quieres recurrir a guiones bajos siempre puedes usar la no
 Recomiendo, para profundizar en el tema, el libro *"Aprender a programar con Java* de la editorial Paraninfo, el curso de Píldoras Informáticas de Java y la web [NTU](https://www.ntu.edu.sg/home/ehchua/programming/java/J3b_OOPInheritancePolymorphism.html).
 
 ## Conceptos sobre POO
-### Constructores
+### :cyclone: Constructores
 Método especial para inicializar un objeto. Puede haber uno o varios constructores, en este último caso se hablaría de *"sobrecarga de constructores"* y variarían según el número de argumentos que le pasemos, esto también hará que Java sepa a qué constructor nos referimos: el constructor ```public Forma(String nombre)``` será distinto al constructor ```public Forma(String nombre, String color)```.
 
-### Constantes o variables de clase
+### :cyclone: Constantes o variables de clase
 Son las variables o constantes definidas dentro de la clase. Para favorecer la encapsulación y evitar el modificarlas fuera de la clase que las define (para poder acceder a ellas se usarán métodos) se les aplica el modificador de acceso *private*.
 
-### Métodos setter y getter
+### :cyclone: Métodos setter y getter
 Métodos que se emplean para "rescatar" las variables o constantes de clase. Normalmente se suelen nombrar con ```set``` o ```get```seguido del nombre de la variable, por ejemplo: ```setColor(String color)```o ```setEdad(int edad)```.
 
-### Operador this
+### :cyclone: Operador this
 Sirve para hacer referencia a las constantes o variables de clase. En el fragmento de código siguiente se definen dos variables de clase, de tipo String e int:
 
 ```private String nombre```
@@ -59,10 +59,10 @@ public Cuenta(String titular) {
 
 Esto se hace para que, al usar el constructor que solo recibe como argumento un parámetro, el otro (la cantidad) no quede sin definir. Con lo cual, en la llamada al segundo constructor con el *"this"* le indicamos que como primer parametro le pase el argumento titular y como segundo le pase 0.
     
-### Métodos
+### :cyclone: Métodos
 Son las acciones que van a realizar los objetos que creemos. Un método setter o getter sería un método. Estos métodos pueden recibir parámetros o no. En el caso de este ejemplo, dentro de la clase Forma, tenemos el método getArea() y toString(). Hay mucho más que decir sobre los métodos, pero como idea general piensa que un método una acción.
 
-### Modificadores de acceso
+### :cyclone: Modificadores de acceso
 Son las palabras reservadas que se ponen delante de métodos, clases o variables/constantes para limitar su visibilidad.
 
 Modificador | Clase | Paquete | Subclase | Todos
@@ -72,7 +72,7 @@ PRIVATE | SI | NO | NO | NO
 PROTECTED | SI | SI | SI | NO
 POR DEFECTO | SI | SI | NO | NO
 
-### Herencia
+### :cyclone: Herencia
 Tiene el mismo concepto que la herencia en la vida real. En el caso de la POO consiste en crear una clase que esta en la primera posición **(superclase)** y otras clases que heredan de ella **(subclases)**. Las clases que heredan tienen a su disposición los métodos y variables/constantes que hayamos definido. Para heredar de una clase usamos la palabra reservada **extends**:
 
 ```
@@ -81,14 +81,28 @@ public class Triangulo extends Forma { ... }
 
 Con lo cual la clase Triangulo tendrá disponibles todos los métodos de la clase Forma. En Java, a diferencia de otros lenguajes, no existe la herencia múltiple, algo que se puede suplir con las Interfaces y clases abstractas.
 
-### Interfaces
+### Uso de super()
+Cuando heredamos una clase y creamos su constructor es necesario hacer una llamada al constructor padre (el de la superclase) para inicializarlo. Esto se hace mediante la palabra super(), escribiéndola **en la primera línea nada más abrir las llaves del constructor de la subclase**. Dentro de super se le pasarán los parámetros en caso de ser necesario.
+
+```
+public Triangulo(String color, int base, int altura){
+     super(color);
+     
+     this.base = base;
+     this.altura = altura;
+}
+```
+
+En este caso estaríamos llamando a un constructor de la clase padre que recibe un parametro de tipo String llamado "color". Ese color se almacenará en el argumento "color" de super() y de allí al constructor padre. El resto de argumentos (variables de clase) se almacenan haciendo uso de this.
+
+### :cyclone: Interfaces
 Se definen como un contrato. Las clases que la implementen estarán obligadas a desarrollar los métodos que se han definido en la interfaz. Se usan para dotar de más robustez al software y para solventar el problema de la falta de herencia múltiple. Para implementar una interface se usa la palabra reservada **implements**:
 
 ```
 public class Forma implements Normas { ... }
 ```
 
-### Sobreescritura de métodos
+### :cyclone: Sobreescritura de métodos
 Cuando una clase hereda de otra, además de usar sus métodos puede sobreescribirlos, con lo cual pueden darle una funcionalidad propia. Cuando un método sobreescribe a otro el IDE suele identificarlo por medio de un icono. Se puede emplear la línea *@Override* para indicar que ese método está sobreescrito, pero esto es algo funcional y que solo dota de información al compilador
 
 ```
@@ -96,7 +110,7 @@ Cuando una clase hereda de otra, además de usar sus métodos puede sobreescribi
 public String toString() { ... }
 ```
 
-### Clases abstractas
+### :cyclone: Clases abstractas
 Siguiendo con el ejemplo de la clase Forma, vamos a fijarnos en el método getArea(). Si lo pensamos, en la clase Forma todavía no sabemos qué figura geométrica es, por lo que no podemos calcular un área. Esto podríamos solventarlo así:
 
 ```
@@ -116,7 +130,7 @@ abstract class Forma{
 
 Esta clase abstracta *no puede ser instanciada*, es decir, no se puede hacer *Forma triangulo = new Forma();*. Las clases abstractas son algo muy parecido a las interfaces, aunque estas últimas tienen sus métodos solo definidos, mientras que dentro de una clase normal podemos tener una clase abstracta y tres "normales" con sus métodos perfectamente desarrollados.
 
-### Polimorfismo
+### :cyclone: Polimorfismo
 Se puede utilizar un objeto de la subclase siempre que el programa espere un objeto de la superclase, es decir, un objeto se comporta de diferente manera dependiendo del contexto. Es decir, podríamos instanciar un objeto de la clase Triangulo de las siguientes maneras:
 
 ```
@@ -126,7 +140,7 @@ Forma r2 = new Triangulo();
 
 Como vemos, en el segundo caso el programa esperaba una superclase (Forma) y en cambio hemos usado un objeto de la subclase.
 
-### Instanciar un objeto
+### :cyclone: Instanciar un objeto
 Seguramente uno de los conceptos fundamentales, consiste en crear objetos de la clase creada por medio del operador **new**, sigue el siguiente patrón:
 
 ```
