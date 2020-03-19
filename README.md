@@ -12,7 +12,7 @@ El programa se estructura en tres ficheros: en primer lugar una clase **Forma** 
 #### Nombre de paquetes y clases
 Por norma general, los paquetes se nombras con palabras en minúsculas, sin carácteres extraños y sin espacios, admitiendo números. Yo suelo nombrarlos de la siguiente manera: *paquete_poo_polimorfismo* ó *ejercicio01_herencia*.
 
-En cuanto a las clases, las comienzo nombrando en mayúscula, sin espacios y pudiendo contener números también, algunos ejemplos serían: *Triángulo*, *Uso_Forma* o *Uso_Cuenta_Corriente3*.
+En cuanto a las clases, las comienzo nombrando en mayúscula, sin espacios y pudiendo contener números también, algunos ejemplos serían: *Triangulo*, *Uso_Forma* o *Uso_Cuenta_Corriente3*.
 
 En ambos casos, si no quieres recurrir a guiones bajos siempre puedes usar la notación Camel Case.
 
@@ -21,23 +21,23 @@ Recomiendo, para profundizar en el tema, el libro *"Aprender a programar con Jav
 
 ## Conceptos sobre POO
 ### :cyclone: Constructores
-Método especial para inicializar un objeto. Puede haber uno o varios constructores, en este último caso se hablaría de *"sobrecarga de constructores"* y variarían según el número de argumentos que le pasemos, esto también hará que Java sepa a qué constructor nos referimos: el constructor ```public Forma(String nombre)``` será distinto al constructor ```public Forma(String nombre, String color)```.
+Método especial para inicializar un objeto. Puede haber uno o varios constructores, en este último caso se hablaría de *"sobrecarga de constructores"* y variarían según el número de argumentos que le pasemos, esto también hará que Java sepa a qué constructor nos referimos: el constructor ```public Forma(String nombre){ ... }``` será distinto al constructor ```public Forma(String nombre, String color){ ... }```.
 
 ### :cyclone: Constantes o variables de clase
 Son las variables o constantes definidas dentro de la clase. Para favorecer la encapsulación y evitar el modificarlas fuera de la clase que las define (para poder acceder a ellas se usarán métodos) se les aplica el modificador de acceso *private*.
 
 ### :cyclone: Métodos setter y getter
-Métodos que se emplean para "rescatar" las variables o constantes de clase. Normalmente se suelen nombrar con ```set``` o ```get```seguido del nombre de la variable, por ejemplo: ```setColor(String color)```o ```setEdad(int edad)```.
+Métodos que se emplean para "rescatar" las variables o constantes de clase. Normalmente se suelen nombrar con ```set``` o ```get```seguido del nombre de la variable, por ejemplo: ```setColor(String color){ ... }```o ```setEdad(int edad){ ... }```.
 
 ### :cyclone: Operador this
 Sirve para hacer referencia a las constantes o variables de clase. En el fragmento de código siguiente se definen dos variables de clase, de tipo String e int:
 
-```private String nombre```
-```private int edad```
+```private String nombre;```
+```private int edad;```
 
 Acto seguido, vamos a crear un método (siguiente apartado) para establecer una edad:
 
-```setEdad(int edad)```
+```setEdad(int edad){ ... }```
 
 Fijarse que el método edad recibe un argumento de tipo entero llamado también edad. Ante esto, java no sabría interpretar cuándo nos referimos al argumento y cuando a la variable de clase, para ello está el operador this. Cuando lo usamos delante del nombre de la variable, Java entiende que hablamos de la variable de clase, no del argumento:
 
@@ -57,7 +57,7 @@ public Cuenta(String titular) {
 }
 ```
 
-Esto se hace para que, al usar el constructor que solo recibe como argumento un parámetro, el otro (la cantidad) no quede sin definir. Con lo cual, en la llamada al segundo constructor con el *"this"* le indicamos que como primer parametro le pase el argumento titular y como segundo le pase 0.
+Esto se hace para que, al usar el constructor que solo recibe como argumento un parámetro, el otro (la cantidad) no quede sin definir. Con lo cual, en la llamada al segundo constructor con el *"this"* le indicamos que como primer parametro le pase el argumento *titular* y como segundo le pase 0.
     
 ### :cyclone: Métodos
 Son las acciones que van a realizar los objetos que creemos. Un método setter o getter sería un método. Estos métodos pueden recibir parámetros o no. En el caso de este ejemplo, dentro de la clase Forma, tenemos el método getArea() y toString(). Hay mucho más que decir sobre los métodos, pero como idea general piensa que un método una acción.
@@ -159,4 +159,3 @@ Como se puede ver se ha usado la clase Forma para crear un objeto de ella, segui
 Espero que, de una manera general, haya quedado todo claro y yo haya sabido transmitir lo poco que se de Java. Continuar aprendiendo y, sobre todo, desarrollando vuestros propios proyectos y ejercicios, es la única manera de dominar un lenguaje.
 
 Para más info podéis visitar mi web [JGCarrillo](http://jgcarrillo.com) o leerme en [Medium](https://medium.com/@ysjgomez). :v: :v:
-
